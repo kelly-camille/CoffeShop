@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
 function InventoryList(props) {
   return(
     <React.Fragment>
+    <h2>Currently In Stock</h2>
     {props.inventoryList.map((inventory) =>
       <Inventory 
       whenInventoryClicked = { props.onInventorySelection }

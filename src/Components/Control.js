@@ -17,6 +17,8 @@ class Control extends React.Component {
     };
   }
 
+
+
   handleClick = () => {
     if (this.state.selectedInventory != null) {
       this.setState({
@@ -30,6 +32,12 @@ class Control extends React.Component {
     }));
   }
 }
+
+handleSell = (inventory) => {
+  inventory.stock -= 1;
+  this.setState({
+    selectedInventory: inventory
+  })
 
   handleAddingNewInventoryToList = (newInventory) => {
     const newMainInventoryList = this.state.mainInventoryList.concat(newInventory);
@@ -62,6 +70,8 @@ class Control extends React.Component {
       editing: false,
       selectedInventory: null
     });
+
+    }
   }
 
  
