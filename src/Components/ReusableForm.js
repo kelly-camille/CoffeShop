@@ -13,7 +13,7 @@ function ReusableForm(props) {
         <input
         type='number'
         name='stock'
-        placeholder='Restock Wholesale Bags' />
+        placeholder='lbs of coffee' />
       <button type='submit'>{props.buttonText}</button>
     </form>
     </React.Fragment>

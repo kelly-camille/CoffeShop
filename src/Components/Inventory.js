@@ -3,6 +3,17 @@ import PropTypes from "prop-types";
 
 function Inventory(props){
 
+  if(props.stock < 0) {
+    return (
+      <React.Fragment>
+      <div onClick = {() => props.whenInventoryClicked(props.id)}>
+   <h3>{props.name}</h3>
+     <p>Out of stock</p>
+     </div>
+  </React.Fragment>
+    )
+  } else {
+
   return (
     <React.Fragment>
         <div onClick = {() => props.whenInventoryClicked(props.id)}>
@@ -11,6 +22,7 @@ function Inventory(props){
        </div>
     </React.Fragment>
   );
+}
 }
 
 Inventory.propTypes = {

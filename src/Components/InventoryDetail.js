@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 function InventoryDetail(props){
   const { inventory, onClickingDelete } =  props;
+
+  if(inventory.stock >= 0){
   return(
     <React.Fragment>
       <h1>Inventory Detail</h1>
@@ -13,6 +15,16 @@ function InventoryDetail(props){
       <button onClick={()=> onClickingDelete(inventory.id)}> Delete Inventory</button>
     </React.Fragment>
   );
+} else {
+  return(
+    <React.Fragment>
+      <h1>{inventory.name} is out of stock</h1>
+      <button onClick={ () => props.onClickingRestock(inventory)}>restock</button>
+      <button onClick={()=> onClickingDelete(inventory.id)}> Delete Inventory</button>
+    </React.Fragment>
+  )
+}
+
 }
 
 InventoryDetail.propTypes = {
