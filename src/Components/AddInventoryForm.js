@@ -9,6 +9,9 @@ function AddInventoryForm(props){
     event.preventDefault();
     props.onNewInventoryCreation({
       name: event.target.name.value,
+      origin: event.target.origin.value,
+      roast: event.target.roast.value,
+      price: event.target.price.value,
       stock: parseInt(event.target.stock.value),
       id: v4()
     });

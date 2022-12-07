@@ -9,7 +9,10 @@ function EditInventoryForm (props) {
     event.preventDefault();
     props.onEditInventory({
       name: event.target.name.value,
-      stock: event.target.stock.value,
+      origin: event.target.origin.value,
+      roast: event.target.roast.value,
+      price: event.target.price.value,
+      stock: parseInt(event.target.stock.value),
       id: inventory.id
     })
   }

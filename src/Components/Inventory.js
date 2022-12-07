@@ -19,6 +19,11 @@ function Inventory(props){
         <div onClick = {() => props.whenInventoryClicked(props.id)}>
      <h3>{props.name}</h3>
        <p>{props.stock} lbs </p>
+       <ul>
+      <li>origin: {props.origin}</li>
+      <li>roast: {props.roast}</li>
+      <li>price/lb: {props.price}</li>
+      </ul>
        </div>
     </React.Fragment>
   );
@@ -27,7 +32,7 @@ function Inventory(props){
 
 Inventory.propTypes = {
   name: PropTypes.string,
-  stock:PropTypes.string,
+  stock:PropTypes.number,
   id: PropTypes.string,
   whenInventoryClicked: PropTypes.func
 }

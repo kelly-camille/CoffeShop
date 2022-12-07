@@ -21,6 +21,9 @@ function InventoryList(props) {
       <Inventory 
       whenInventoryClicked = { props.onInventorySelection }
       name={inventory.name}
+      origin={inventory.origin}
+      roast={inventory.roast}
+      price={inventory.price}
       stock={inventory.stock}
       key={inventory.id}
       id={ inventory.id }/> 
