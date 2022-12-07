@@ -17,8 +17,6 @@ class Control extends React.Component {
     };
   }
 
-
-
   handleClick = () => {
     if (this.state.selectedInventory != null) {
       this.setState({
@@ -33,11 +31,19 @@ class Control extends React.Component {
   }
 }
 
+handleRestock = (inventory) => {
+  inventory.stock += 130;
+  this.setState({
+    selectedInventory: inventory
+  })
+}
+
 handleSell = (inventory) => {
   inventory.stock -= 1;
   this.setState({
     selectedInventory: inventory
   })
+}
 
   handleAddingNewInventoryToList = (newInventory) => {
     const newMainInventoryList = this.state.mainInventoryList.concat(newInventory);
@@ -71,10 +77,8 @@ handleSell = (inventory) => {
       selectedInventory: null
     });
 
-    }
-  }
-
- 
+}
+  
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -86,7 +90,9 @@ handleSell = (inventory) => {
       currentlyVisibleState = <InventoryDetail 
       inventory = {this.state.selectedInventory} 
       onClickingDelete = {this.handleDeletingInventory}
-      onClickingEdit = {this.handleEditClick} />
+      onClickingEdit = {this.handleEditClick}
+      onClickingSell = {this.handleSell} 
+      onClickingRestock = {this.handleRestock}/>
       buttonText ="return to list"
     }
     else if (this.state.formVisibleOnPage) {

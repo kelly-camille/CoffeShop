@@ -11,7 +11,7 @@ function ReusableForm(props) {
         name='name'
         placeholder='coffee name' />
         <input
-        type='string'
+        type='number'
         name='stock'
         placeholder='Restock Wholesale Bags' />
       <button type='submit'>{props.buttonText}</button>
